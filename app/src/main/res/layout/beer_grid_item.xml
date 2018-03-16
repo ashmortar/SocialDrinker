@@ -26,10 +26,9 @@
                 <ImageView
                     android:id="@+id/grid_image"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:scaleType="fitXY"
-                    android:src="@drawable/beer" >
-                </ImageView>
+                    android:src="@drawable/beer"></ImageView>
             </LinearLayout>
 
             <LinearLayout
@@ -44,7 +43,7 @@
                     android:layout_height="20dp"
                     android:text="beer"
                     android:textAlignment="center"
-                    android:textSize="8sp">
+                    android:textSize="12sp">
 
                 </TextView>
             </LinearLayout>

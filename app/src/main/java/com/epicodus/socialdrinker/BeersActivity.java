@@ -1,6 +1,7 @@
 package com.epicodus.socialdrinker;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,14 +22,14 @@ public class BeersActivity extends AppCompatActivity {
     private String[] beers = new String[] {"Juice Jr", "Oregon Native", "Avatar Jasmine", "Trumpet Major", "Duo", "Pimp My Sleigh", "The DAB Lab, Hop Hash", "The Terry Porter"};
     private String[] styles = new String[] {"IPA - New England", "Saison/Farmhouse Ale", "IPA - American", "Burton Ale", "Lambic - fruit", "Belgian Strong Dark Ale", "IPA - American", "Porter - American"};
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beers);
         ButterKnife.bind(this);
+        Typeface roboto = Typeface.DEFAULT.createFromAsset(getAssets(), "fonts/Roboto-Regular.ttf");
 
-        BeersListAdapter adapter = new BeersListAdapter(this, android.R.layout.simple_list_item_1, beers, styles);
+        BeersListAdapter adapter = new BeersListAdapter(this, android.R.layout.simple_list_item_1, beers, styles, roboto);
         mListView.setAdapter(adapter);
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
