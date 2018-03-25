@@ -38,9 +38,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         if (view == mBeerMeButton) {
             String location = mLocationEditText.getText().toString();
-            Intent intent = new Intent(MainActivity.this, BeersActivity.class);
-            intent.putExtra("location", location);
-            startActivity(intent);
+
+            if (location.length() != 5) {
+                Toast.makeText(this, "Please enter a valid zip code \n\nExamples include 97204 or 90210", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(MainActivity.this, BeersActivity.class);
+                intent.putExtra("location", location);
+                startActivity(intent);
+            }
         }
 
         if (view == mShowGridButton) {

@@ -39,6 +39,7 @@
         android:layout_marginTop="64dp"
         android:background="@color/colorIcons"
         android:hint="Enter Zip Code"
+        android:inputType="number"
         android:padding="5dp" />
 
     <Button
